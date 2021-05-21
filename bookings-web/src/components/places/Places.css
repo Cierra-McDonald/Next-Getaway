@@ -1,0 +1,18 @@
+.ul { 
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-direction: row;
+}
+
+.list { 
+    justify-content: center;
+    padding: 10px;
+    background-color: red;
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}

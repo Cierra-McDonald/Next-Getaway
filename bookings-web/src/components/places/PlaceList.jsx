@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Place from './Place';
+import styles from './Places.css'
+import LoadingSpinner from '../loading/LoadingSpinner'
+
 
 const PlaceList = ({ places, loading }) => {
   return (
@@ -8,8 +11,17 @@ const PlaceList = ({ places, loading }) => {
       { loading 
         ? 
         <h2>Loading...</h2>
+        // <LoadingSpinner/>
         :
-        places.map((place) => <Place key={place.id} {...place} />)
+        <ul aria-label="places" className={styles.ul}>
+          {
+            places.map((place) => (<li key={place.id} className={styles.list}>
+             <Place  
+             {...place} /> 
+             </li>
+             ))
+          }
+        </ul>
       }
     </div>
     
