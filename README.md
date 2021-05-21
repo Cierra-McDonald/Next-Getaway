@@ -1,5 +1,6 @@
 # Getaways
 An app for booking amazing getaway vacations.
+Cierra McDonald Version
 
 ## Getting Started
 
