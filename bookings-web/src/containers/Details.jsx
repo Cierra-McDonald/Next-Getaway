@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import { getOnePlace } from '../services/placesApi';
 
-const Details = () => { 
+const Details = (props) => { 
     const [places, setPlace] = useState([]);
     const [loading, setLoading] = useState(true)
 

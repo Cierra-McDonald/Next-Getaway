@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 import styles from './Places.css'
 
 const Place = ({
@@ -13,10 +14,13 @@ const Place = ({
   petFriendly,
   pool,
   wifi,
+  id
 }) => {
   return (
     <div>
-      <h2>{name}</h2>
+      <Link exact="true" activeclassname="selected" to={`/places/${id}`}>
+        <h2>{name}</h2>
+      </Link>
       <p>Description: {description}</p>
       <p>Location: {location}</p>
       <p>Price Per Night: ${pricePerNight}</p>
