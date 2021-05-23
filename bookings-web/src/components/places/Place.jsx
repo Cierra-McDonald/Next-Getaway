@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
+import styles from './Places.css'
 
 const Place = ({
   name,
@@ -12,20 +14,18 @@ const Place = ({
   petFriendly,
   pool,
   wifi,
+  id
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
-    </ul>
+    <div>
+      <Link exact="true" activeclassname="selected" to={`/places/${id}`} className={styles.link}>
+        <h2>{name}</h2>
+      <img src={image} alt={name} style={{height: '250px', width: '250px'}}/>
+      <p>Price Per Night: ${pricePerNight}</p>
+      <p>Description: {description}</p>
+      <p>Location: {location}</p>
+      </Link>
+    </div>
   );
 };
 

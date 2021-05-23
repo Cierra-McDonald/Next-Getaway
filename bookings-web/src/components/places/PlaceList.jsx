@@ -1,9 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Place from './Place';
+import styles from './Places.css'
+import LoadingSpinner from '../loading/LoadingSpinner'
 
-const PlaceList = ({ places }) => {
-  return places.map((place) => <Place key={place.id} {...place} />);
+
+const PlaceList = ({ places, loading }) => {
+  return (
+    <div>
+      { loading 
+        ? 
+        <h2>Loading...</h2>
+        // <LoadingSpinner/>
+        :
+        <ul aria-label="getaways" className={styles.ul}>
+          {
+            places.map((place) => (
+            <li key={place.id} className={styles.list}>
+             <Place  
+             {...place} /> 
+             </li>
+             ))
+          }
+        </ul>
+      }
+    </div>
+    
+  )
+  
+  
 };
 
 PlaceList.propTypes = {
