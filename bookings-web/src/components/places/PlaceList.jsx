@@ -13,9 +13,10 @@ const PlaceList = ({ places, loading }) => {
         <h2>Loading...</h2>
         // <LoadingSpinner/>
         :
-        <ul aria-label="places" className={styles.ul}>
+        <ul aria-label="getaways" className={styles.ul}>
           {
-            places.map((place) => (<li key={place.id} className={styles.list}>
+            places.map((place) => (
+            <li key={place.id} className={styles.list}>
              <Place  
              {...place} /> 
              </li>

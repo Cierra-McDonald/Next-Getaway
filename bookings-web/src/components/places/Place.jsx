@@ -18,18 +18,13 @@ const Place = ({
 }) => {
   return (
     <div>
-      <Link exact="true" activeclassname="selected" to={`/places/${id}`}>
+      <Link exact="true" activeclassname="selected" to={`/places/${id}`} className={styles.link}>
         <h2>{name}</h2>
-      </Link>
+      <img src={image} alt={name} style={{height: '250px', width: '250px'}}/>
+      <p>Price Per Night: ${pricePerNight}</p>
       <p>Description: {description}</p>
       <p>Location: {location}</p>
-      <p>Price Per Night: ${pricePerNight}</p>
-      <img src={image} alt={name} style={{height: '250px', width: '250px'}}/>
-      {/* <p>{imageThumbnail}</p> */}
-      <p>Max Guest: {maxGuests}</p>
-      <p>Furry Friends: {petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</p>
-      {pool ? <p>Has a Pool!</p> : null}
-      {wifi ? <p>Free Wifi</p> : null}
+      </Link>
     </div>
   );
 };
