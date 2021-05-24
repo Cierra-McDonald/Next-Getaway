@@ -5,6 +5,7 @@ const Place = require('../models/Place');
 module.exports = Router()
   .get('/', async (req, res, next) => {
     const places = await Place.find().exec();
+    // console.log(res);
     res.json(places);
   })
   .get('/:id', async (req, res, next) => {
